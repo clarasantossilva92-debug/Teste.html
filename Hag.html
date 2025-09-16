@@ -1,0 +1,91 @@
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divulgação Instagram</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #111;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Slider do Instagram */
+    .slider {
+        width: 80%;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .slider span {
+        display: inline-block;
+        padding: 20px 50px;
+        font-size: 2em;
+        font-weight: bold;
+        animation: slide 10s linear infinite;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    @keyframes slide {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .slider span:hover {
+        color: #ffd700;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+    }
+
+    /* Confetes */
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ff0;
+        opacity: 0.8;
+        animation: fall linear infinite;
+        border-radius: 50%;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-10px) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+
+<div class="slider">
+    <span onclick="window.open('https://www.instagram.com/Italo_244308','_blank')">
+        Siga no Instagram: @Italo_244308
+    </span>
+</div>
+
+<script>
+    // Criar confetes
+    const colors = ['#f44336', '#e91e63', '#9c27b0', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800'];
+    for(let i=0; i<100; i++){
+        let confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+        confetti.style.width = confetti.style.height = (5 + Math.random() * 10) + 'px';
+        document.body.appendChild(confetti);
+    }
+</script>
+
+</body>
+  </html>
